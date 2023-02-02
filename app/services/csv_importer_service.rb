@@ -13,10 +13,10 @@ class CsvImporterService
       end
 
       unless row['Affiliations'].nil?
-      row['Affiliations'].split(',').each do |c|
-        affiliation = Affiliation.find_or_create_by(Name: c)
-        PeopleAffiliation.find_or_create_by(person_id: person.id, affiliation_id: affiliation.id);
-      end
+        row['Affiliations'].split(',').each do |c|
+          affiliation = Affiliation.find_or_create_by(Name: c)
+          PeopleAffiliation.find_or_create_by(person_id: person.id, affiliation_id: affiliation.id);
+        end
       end
 
     end

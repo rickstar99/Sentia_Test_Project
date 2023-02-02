@@ -1,3 +1,4 @@
-class Affiliations < ApplicationRecord
-    belongs_to :affiliation_person
+class Affiliation < ApplicationRecord
+    has_many :people_affiliations
+    has_many :people, through: :people_affiliations
 end

@@ -1,5 +1,81 @@
-<h1>Pages</h1>
 
-<h1>
-  Number of Records :
-</h1>
+<h1>People</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+
+  <% @people.each do |p| %>
+  <tr>
+    <td><%= p.id %></td>
+    <td><%= p.Name %></td>
+  </tr>
+  <% end %>
+
+</table>
+ <table>
+   <tr>
+     <th>ID</th>
+     <th>Name</th>
+   </tr>
+
+   <h1>Affiliations</h1>
+  <% @affiliation.each do |a| %>
+    <tr>
+      <td><%= a.id %></td>
+      <td><%= a.Name %></td>
+    </tr>
+  <% end %>
+
+</table>
+
+<h1>Locations</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  <% @location.each do |l| %>
+    <tr>
+      <td><%= l.id %></td>
+      <td><%= l.Name %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<h1>People Affiliations</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Person ID</th>
+    <th>Affiliation ID</th>
+  </tr>
+  <% @people_affiliation.each do |pa| %>
+    <tr>
+      <td><%= pa.id %></td>
+      <td><%= pa.person_id %></td>
+      <td><%= pa.affiliation_id %></td>
+    </tr>
+  <% end %>
+
+</table>
+<table>
+
+  <h1>People Locations</h1>
+  <tr>
+    <th>ID</th>
+    <th>Person ID</th>
+    <th>Location ID</th>
+  </tr>
+  <% @people_location.each do |pl| %>
+    <tr>
+      <td><%= pl.id %></td>
+      <td><%= pl.location_id %></td>
+      <td><%= pl.location_id %></td>
+    </tr>
+  <% end %>
+
+</table>

@@ -3,21 +3,17 @@ class CsvImporterService
 
   def call
     CSV.foreach('lib\csv\sentia_test_data.csv', headers: true) do |row|
-      person_hash = {}
-      location_hash = {}
-      affiliation_hash = {}        
 
-      person_hash[:Name] = row["Name"]
-      
-      Person.create person_hash
-      
-      location_hash[:Name] = row["Locations"]
+      person = Person.find_or_create_by(Name: row['Name'])
 
-      Locations.create location_hash
+      location = Location.find_or_create_by(Name: row['Locations'])
 
-      affiliation_hash[:Name] = row["Affiliations"]
+      affiliation = Affiliation.find_or_create_by(Name: row["Affiliations"])
 
-      Affiliations.create affiliation_hash
+      PeopleAffiliation.find_or_create_by(person_id: person.id, affiliation_id: affiliation.id)
+
+      PeopleLocation.find_or_create_by(person_id: person.id, location_id: location.id);
+
     end
   end
 

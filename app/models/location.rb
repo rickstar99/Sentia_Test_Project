@@ -1,3 +1,4 @@
-class Locations < ApplicationRecord
-    belongs_to :location_people
+class Location < ApplicationRecord
+    has_many :people_locations
+    has_many :people, through: :people_locations
 end

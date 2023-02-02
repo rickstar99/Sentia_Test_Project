@@ -5,9 +5,7 @@ class PagesController < ApplicationController
   def index
     csvImportService = CsvImporterService.new()
 
-    unless Person.present?
       csvImportService.call
-    end
     @people_affiliation = PeopleAffiliation.all
     @people_location = PeopleLocation.all
     @people = Person.all

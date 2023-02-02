@@ -1,81 +1,103 @@
-
-<h1>People</h1>
-
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-  </tr>
-
-  <% @people.each do |p| %>
-  <tr>
-    <td><%= p.id %></td>
-    <td><%= p.Name %></td>
-  </tr>
-  <% end %>
-
-</table>
- <table>
-   <tr>
-     <th>ID</th>
-     <th>Name</th>
-   </tr>
-
-   <h1>Affiliations</h1>
-  <% @affiliation.each do |a| %>
+<div class="table-container">
+  <table class="table">
+    <h1>People</h1>
     <tr>
-      <td><%= a.id %></td>
-      <td><%= a.Name %></td>
+      <th>ID</th>
+      <th>Name</th>
     </tr>
-  <% end %>
+    <% @people.each do |p| %>
+      <tr>
+        <td><%= p.id %></td>
+        <td><%= p.Name %></td>
+      </tr>
+    <% end %>
+  </table>
 
-</table>
-
-<h1>Locations</h1>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-  </tr>
-  <% @location.each do |l| %>
+  <table class="table">
+    <h1>Affiliations</h1>
     <tr>
-      <td><%= l.id %></td>
-      <td><%= l.Name %></td>
+      <th>ID</th>
+      <th>Name</th>
     </tr>
-  <% end %>
-</table>
+    <% @affiliation.each do |a| %>
+      <tr>
+        <td><%= a.id %></td>
+        <td><%= a.Name %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 
-
-<h1>People Affiliations</h1>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Person ID</th>
-    <th>Affiliation ID</th>
-  </tr>
-  <% @people_affiliation.each do |pa| %>
+<div class="table-container">
+  <table class="table">
+    <h1>Locations</h1>
     <tr>
-      <td><%= pa.id %></td>
-      <td><%= pa.person_id %></td>
-      <td><%= pa.affiliation_id %></td>
+      <th>ID</th>
+      <th>Name</th>
     </tr>
-  <% end %>
+    <% @location.each do |l| %>
+      <tr>
+        <td><%= l.id %></td>
+        <td><%= l.Name %></td>
+      </tr>
+    <% end %>
+  </table>
 
-</table>
-<table>
-
-  <h1>People Locations</h1>
-  <tr>
-    <th>ID</th>
-    <th>Person ID</th>
-    <th>Location ID</th>
-  </tr>
-  <% @people_location.each do |pl| %>
+  <table class="table">
+    <h1>People Affiliations</h1>
     <tr>
-      <td><%= pl.id %></td>
-      <td><%= pl.location_id %></td>
-      <td><%= pl.location_id %></td>
+      <th>ID</th>
+      <th>Person ID</th>
+      <th>Affiliation ID</th>
     </tr>
-  <% end %>
+    <% @people_affiliation.each do |pa| %>
+      <tr>
+        <td><%= pa.id %></td>
+        <td><%= pa.person_id %></td>
+        <td><%= pa.affiliation_id %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 
-</table>
+<div class="table-container">
+  <table class="table">
+    <h1>People Locations</h1>
+    <tr>
+      <th>ID</th>
+      <th>Person ID</th>
+      <th>Location ID</th>
+    </tr>
+    <% @people_location.each do |pl| %>
+      <tr>
+        <td><%= pl.id %></td>
+        <td><%= pl.person_id %></td>
+        <td><%= pl.location_id %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<style>
+    .table-container {
+      display: inline-block;
+      width: 50%;
+      vertical-align: top;
+      padding: 10px;
+    }
+
+    .table {
+      border-collapse: collapse;
+        width: 100%;
+        text-align: center;
+    }
+
+    .table th, .table td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    .table th {
+        background-color: #f2f2f2;
+    }
+</style>
